@@ -1,9 +1,9 @@
 from flask import Blueprint, request, g
-from app.models.activity_log import ActivityLog
-from app.services.cookie_service import CookieService
-from app.utils.helpers import format_response, format_error
-from app.utils.decorators import auth_required, validate_json
-from app.utils.validators import ActivityLogSchema
+from api.models.activity_log import ActivityLog
+from api.services.cookie_service import CookieService
+from api.utils.helpers import format_response, format_error
+from api.utils.decorators import auth_required, validate_json
+from api.utils.validators import ActivityLogSchema
 
 activities_bp = Blueprint('activities', __name__)
 
@@ -115,7 +115,7 @@ def delete_activity(activity_id):
 def get_activity_stats():
     """Get activity statistics for current user"""
     try:
-        from app.services.activity_service import ActivityService
+        from api.services.activity_service import ActivityService
         stats = ActivityService.get_user_statistics(g.current_user_id)
         
         return format_response(stats, "Statistics retrieved successfully")

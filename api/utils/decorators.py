@@ -1,8 +1,8 @@
 from functools import wraps
 from flask import request, g
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from app.utils.helpers import format_error
-from app.services.auth_service import get_user_by_id
+from api.utils.helpers import format_error
+from api.services.auth_service import get_user_by_id
 
 def auth_required(f):
     """Decorator to require authentication"""
@@ -44,7 +44,7 @@ def validate_json(schema_class):
         @wraps(f)
         def decorated_function(*args, **kwargs):
             try:
-                from app.utils.validators import validate_json_data
+                from api.utils.validators import validate_json_data
                 data = validate_json_data(schema_class, request.get_json())
                 g.validated_data = data
                 return f(*args, **kwargs)

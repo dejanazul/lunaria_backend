@@ -1,5 +1,5 @@
-from app.utils.database import execute_query, DatabaseError
-from app.utils.helpers import generate_uuid
+from api.utils.database import execute_query, DatabaseError
+from api.utils.helpers import generate_uuid
 
 class DailyLog:
     def __init__(self, log_id=None, user_id=None, cycle_id=None, 

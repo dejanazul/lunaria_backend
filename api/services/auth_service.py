@@ -1,6 +1,6 @@
 from flask_jwt_extended import create_access_token, create_refresh_token
-from app.models.user import User
-from app.utils.helpers import format_error
+from api.models.user import User
+from api.utils.helpers import format_error
 
 class AuthService:
     @staticmethod

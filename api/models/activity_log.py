@@ -1,5 +1,5 @@
-from app.utils.database import execute_query, DatabaseError
-from app.utils.helpers import generate_uuid
+from api.utils.database import execute_query, DatabaseError
+from api.utils.helpers import generate_uuid
 
 class ActivityLog:
     def __init__(self, activity_log_id=None, user_id=None, activity_type=None,

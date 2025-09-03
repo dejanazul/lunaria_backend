@@ -1,7 +1,7 @@
 from flask import Blueprint, request, g
-from app.services.cookie_service import CookieService
-from app.utils.helpers import format_response, format_error
-from app.utils.decorators import auth_required
+from api.services.cookie_service import CookieService
+from api.utils.helpers import format_response, format_error
+from api.utils.decorators import auth_required
 
 cookies_bp = Blueprint('cookies', __name__)
 

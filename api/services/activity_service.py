@@ -1,12 +1,12 @@
 from datetime import datetime, timedelta
-from app.models.activity_log import ActivityLog
+from api.models.activity_log import ActivityLog
 
 class ActivityService:
     @staticmethod
     def get_user_statistics(user_id):
         """Get activity statistics for user"""
         try:
-            from app.utils.database import get_supabase
+            from api.utils.database import get_supabase
             supabase = get_supabase()
             
             # Get activities from last 30 days

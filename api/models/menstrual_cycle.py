@@ -1,5 +1,5 @@
-from app.utils.database import execute_query, DatabaseError
-from app.utils.helpers import generate_uuid
+from api.utils.database import execute_query, DatabaseError
+from api.utils.helpers import generate_uuid
 
 class MenstrualCycle:
     def __init__(self, cycle_id=None, user_id=None, start_date=None, 

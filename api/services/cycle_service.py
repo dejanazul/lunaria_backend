@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
-from app.models.menstrual_cycle import MenstrualCycle
-from app.models.daily_log import DailyLog
-from app.utils.helpers import calculate_cycle_length
+from api.models.menstrual_cycle import MenstrualCycle
+from api.models.daily_log import DailyLog
+from api.utils.helpers import calculate_cycle_length
 
 class CycleService:
     @staticmethod

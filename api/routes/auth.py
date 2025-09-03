@@ -1,9 +1,9 @@
 from flask import Blueprint, request, g
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from app.services.auth_service import AuthService
-from app.utils.helpers import format_response, format_error
-from app.utils.decorators import validate_json
-from app.utils.validators import UserRegistrationSchema, UserLoginSchema
+from api.services.auth_service import AuthService
+from api.utils.helpers import format_response, format_error
+from api.utils.decorators import validate_json
+from api.utils.validators import UserRegistrationSchema, UserLoginSchema
 
 auth_bp = Blueprint('auth', __name__)
 
@@ -72,7 +72,7 @@ def get_profile():
     """Get current user profile"""
     try:
         user_id = get_jwt_identity()
-        from app.services.auth_service import get_user_by_id
+        from api.services.auth_service import get_user_by_id
         user = get_user_by_id(user_id)
         
         if not user:

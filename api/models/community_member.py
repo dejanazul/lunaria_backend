@@ -1,5 +1,5 @@
-from app.utils.database import execute_query
-from app.utils.helpers import generate_uuid
+from api.utils.database import execute_query
+from api.utils.helpers import generate_uuid
 
 
 class CommunityMember:

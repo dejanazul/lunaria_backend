@@ -1,8 +1,8 @@
 from flask import Blueprint, request, g
-from app.services.cycle_service import CycleService
-from app.utils.helpers import format_response, format_error
-from app.utils.decorators import auth_required, validate_json
-from app.utils.validators import MenstrualCycleSchema, DailyLogSchema
+from api.services.cycle_service import CycleService
+from api.utils.helpers import format_response, format_error
+from api.utils.decorators import auth_required, validate_json
+from api.utils.validators import MenstrualCycleSchema, DailyLogSchema
 
 cycles_bp = Blueprint('cycles', __name__)
 
@@ -96,8 +96,8 @@ def get_predictions():
 def add_daily_log(cycle_id):
     """Add daily log to cycle"""
     try:
-        from app.models.daily_log import DailyLog
-        from app.models.menstrual_cycle import MenstrualCycle
+        from api.models.daily_log import DailyLog
+        from api.models.menstrual_cycle import MenstrualCycle
         
         # Verify cycle belongs to user
         cycle = MenstrualCycle.get_by_id(cycle_id, g.current_user_id)
@@ -113,7 +113,7 @@ def add_daily_log(cycle_id):
         )
         
         return format_response(
-            log.to_dict(),
+            log.to_dapiict(),
             "Daily log added successfully",
             201
         )

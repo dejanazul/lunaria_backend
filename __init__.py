@@ -1,7 +1,7 @@
 from flask import Flask, g
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
-from app.config import config, validate_config
+from config import config, validate_config
 from utils.database import init_supabase, close_db_connection, check_database_health
 from middleware.error_handler import register_error_handlers
 

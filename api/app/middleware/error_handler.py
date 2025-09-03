@@ -1,7 +1,7 @@
 from flask import jsonify
 from werkzeug.exceptions import HTTPException
 from marshmallow import ValidationError
-from api.utils.database import DatabaseError
+from utils.database import DatabaseError
 
 def register_error_handlers(app):
     """Register global error handlers"""

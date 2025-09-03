@@ -1,5 +1,5 @@
-from api.utils.database import execute_query, DatabaseError
-from api.utils.helpers import hash_password, verify_password, generate_uuid
+from utils.database import execute_query, DatabaseError
+from utils.helpers import hash_password, verify_password, generate_uuid
 
 class User:
     def __init__(self, user_id=None, username=None, email=None, 

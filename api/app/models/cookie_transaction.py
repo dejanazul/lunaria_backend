@@ -1,5 +1,5 @@
-from api.utils.database import execute_query, DatabaseError
-from api.utils.helpers import generate_uuid
+from utils.database import execute_query, DatabaseError
+from utils.helpers import generate_uuid
 
 class CookieTransaction:
     def __init__(self, transaction_id=None, user_id=None, amount=None,
@@ -56,7 +56,7 @@ class CookieTransaction:
         """Calculate user's current cookie balance"""
         try:
             # Use RPC or custom query for SUM
-            from api.utils.database import get_supabase
+            from utils.database import get_supabase
             supabase = get_supabase()
             
             result = supabase.rpc('get_user_cookie_balance', {'user_id': user_id}).execute()

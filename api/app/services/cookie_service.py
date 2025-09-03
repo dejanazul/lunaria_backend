@@ -1,6 +1,6 @@
 from datetime import datetime, date
-from api.models.cookie_transaction import CookieTransaction
-from api.models.user import User
+from models.cookie_transaction import CookieTransaction
+from models.user import User
 
 class CookieService:
     # Cookie reward rates
@@ -102,7 +102,7 @@ class CookieService:
     def get_leaderboard(limit=10):
         """Get top cookie earners"""
         try:
-            from api.utils.database import get_supabase
+            from utils.database import get_supabase
             supabase = get_supabase()
             
             # Use RPC function or custom query

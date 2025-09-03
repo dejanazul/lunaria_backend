@@ -1,9 +1,9 @@
 from flask import Flask, g
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
-from config import config, validate_config
-from api.utils.database import init_supabase, close_db_connection, check_database_health
-from api.middleware.error_handler import register_error_handlers
+from app.config import config, validate_config
+from utils.database import init_supabase, close_db_connection, check_database_health
+from middleware.error_handler import register_error_handlers
 
 
 def create_app(config_name="default"):
@@ -39,13 +39,13 @@ def create_app(config_name="default"):
         close_db_connection()
 
     # Register blueprints
-    from api.routes.auth import auth_bp
+    from routes.auth import auth_bp
 
     # from app.routes.users import users_bp
-    from api.routes.cycles import cycles_bp
-    from api.routes.activities import activities_bp
-    from api.routes.communities import communities_bp
-    from api.routes.cookies import cookies_bp
+    from routes.cycles import cycles_bp
+    from routes.activities import activities_bp
+    from routes.communities import communities_bp
+    from routes.cookies import cookies_bp
 
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
     # app.register_blueprint(users_bp, url_prefix='/api/users')

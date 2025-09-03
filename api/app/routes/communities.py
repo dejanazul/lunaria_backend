@@ -1,10 +1,10 @@
 from flask import Blueprint, request, g
-from api.models.community import Community
-from api.models.community_member import CommunityMember
-from api.models.community_message import CommunityMessage
-from api.utils.helpers import format_response, format_error
-from api.utils.decorators import auth_required, validate_json
-from api.utils.validators import CommunitySchema
+from models.community import Community
+from models.community_member import CommunityMember
+from models.community_message import CommunityMessage
+from utils.helpers import format_response, format_error
+from utils.decorators import auth_required, validate_json
+from utils.validators import CommunitySchema
 
 communities_bp = Blueprint('communities', __name__)
 

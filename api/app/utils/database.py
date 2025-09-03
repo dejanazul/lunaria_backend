@@ -7,7 +7,7 @@ import os
 def init_supabase(app):
     """Initialize Supabase client with Flask app"""
     # Validate configuration first
-    from config import validate_config
+    from app.config import validate_config
     try:
         validate_config()
     except ValueError as e:
